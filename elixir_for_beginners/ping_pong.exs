@@ -16,7 +16,7 @@ defmodule PingPong do
 
   def hit_to(opponent_id, action, turn) do
     IO.puts("#{turn}. hit_to #{inspect(opponent_id)} #{inspect(action)}")
-    send(opponent_id, {_player_pid(), action, turn})
+    send(opponent_id, {_player_pid, action, turn})
   end
 
   defp switch(action) do
@@ -26,7 +26,7 @@ defmodule PingPong do
     end
   end
 
-  defp _player_pid(), do: self()
+  defp _player_pid, do: self()
 end
 
 player_1 = self
