@@ -11,4 +11,8 @@ defmodule CardsTest do
     deck = Cards.create_deck()
     refute deck == Cards.shuffle(deck)
   end
+
+  test "math" do
+    assert 1 + 1 == 2
+  end
 end
