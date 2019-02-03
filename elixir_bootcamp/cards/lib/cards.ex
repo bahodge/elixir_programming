@@ -17,6 +17,7 @@ defmodule Cards do
       "Seven",
       "Eight",
       "Nine",
+      "Ten",
       "Jack",
       "Queen",
       "King"
@@ -38,6 +39,12 @@ defmodule Cards do
 
   @doc """
     Returns `true` or `false` based on whether a deck contains a card
+
+    ## Examples
+      iex> deck = Cards.create_deck
+      iex> Cards.contains?(deck, "Ace of Spades")
+      true
+
   """
   def contains?(deck, card) do
     Enum.member?(deck, card)
@@ -47,9 +54,9 @@ defmodule Cards do
     Divides a deck into a hand and the remainder of the deck
     THe `hand_size` arg indicates how many should be in the hand
 
-    ## Example
+    ## Examples
       iex> deck = Cards.create_deck
-      iex> {hand, deck} = Cards.deal(deck, 1)
+      iex> {hand, _} = Cards.deal(deck, 1)
       iex> hand
       ["Ace of Spades"]
 
