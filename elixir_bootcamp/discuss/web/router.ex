@@ -13,17 +13,17 @@ defmodule Discuss.Router do
     plug(:accepts, ["json"])
   end
 
-  scope "/", Discuss do
+  scope "/topics", Discuss do
     # Use the default browser stack
     pipe_through(:browser)
 
-    get("/", TopicController, :index)
-    get("/topics/new", TopicController, :new)
-    get("/topics/:id/edit", TopicController, :edit)
+    # get("/", TopicController, :index)
+    # get("/topics/new", TopicController, :new)
+    # get("/topics/:id/edit", TopicController, :edit)
+    # post("/topics", TopicController, :create)
+    # put("/topics/:id", TopicController, :update)
 
-    post("/topics", TopicController, :create)
-
-    put("/topics/:id", TopicController, :update)
+    resources("/", TopicController)
   end
 
   # Other scopes may use custom stacks.
