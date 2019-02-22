@@ -1,10 +1,12 @@
-<h5><%= @topic.title %></h5>
+<h4><%= @topic.title %></h4>
 
 <div class="input-field">
     <textarea class='materialize-textarea'></textarea>
     <button class="btn">Add Comment</button>   
 </div>
+<ul class="collection">
 
+</ul>
 
 
 
