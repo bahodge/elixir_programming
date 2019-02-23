@@ -25,9 +25,15 @@ const createSocket = (topicId) => {
 };
 
 function commentTemplete(comment) {
+	let email = 'Anon';
+	if (comment.user) {
+		email = comment.user.email;
+	}
+
 	return `
 			<li class="collection-item">
 				${comment.content}
+				<div class="secondary-content">${email}</div>
 			</li>
 		`;
 }
